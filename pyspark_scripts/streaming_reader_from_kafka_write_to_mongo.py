@@ -19,19 +19,12 @@ def streaming_read_from_kafka():
     df = spark.readStream \
         .format('kafka') \
         .option('kafka.bootstrap.servers', 'localhost:29092') \
-        .option("subscribe", "inbound") \
+        .option("subscribe", "inbound-data") \
         .load()
 
     df1 = df.selectExpr("CAST(value as STRING) as json")
 
     df2 = df1.select(from_json(col("json"), schema=schema).alias("json")).select("json.*")
-
-    # df2.writeStream.format("json") \
-    #     .outputMode("append") \
-    #     .option('checkpointLocation', '../checkpoint') \
-    #     .option('path', "../output") \
-    #     .start() \
-    #     .awaitTermination()
 
     df2.writeStream \
         .format("mongodb") \

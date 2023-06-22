@@ -1,7 +1,8 @@
 # To read from Kafka streaming and write to filesystem
-spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 .\streaming_reader_from_kafka
-.py
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2  .\streaming_reader_from_kafka_write_to_filesystem.py
 
 # To read from Kafka streaming and write to Mongodb collection
-spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2,org.mongodb.spark:mongo-spark-connector_2.12:10.1.1 .\streaming_reader_from_k
-afka.py
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2,org.mongodb.spark:mongo-spark-connector_2.12:10.1.1 .\streaming_reader_from_kafka_write_to_mongo.py
+
+
+spark-submit --packages net.snowflake:snowflake-jdbc:3.13.22,net.snowflake:spark-snowflake_2.12:2.11.0-spark_3.3 streaming_reader_from_kafka_write_to_snowflake.py

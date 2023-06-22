@@ -1,0 +1,8 @@
+diff between snowflake and bigquery
+snowflake java library to insert/upsert data into snowflake
+can snowflake support json data insert/upsert like mongodb
+how can bigquery read huge file and ingest data into bigquery
+batch ingest data from filesystem into bigquery or snowflake
+how to validate, transform and ingest data into snowflake or bigquery
+
+how is big data processed? In terms of memory, cpu, number of nodes
